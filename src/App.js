@@ -4,23 +4,31 @@ import React from "react";
 export default function App() {
   return (
     <div className="App">
-      <header className="App-header">
+      <div className="container">
         <h1>Weather App</h1>
         <Search />
         <footer>
           {" "}
           Coded by{" "}
-          <a href="https://www.linkedin.com/in/juliette-rose1/" target="_blank">
+          <a
+            href="https://www.linkedin.com/in/juliette-rose1/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             {" "}
             Juliette Rose{" "}
           </a>{" "}
           - Open sourced on{" "}
-          <a href="https://github.com/jrose53/meteo-app" target="_blank">
+          <a
+            href="https://github.com/jrose53/meteo-app"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             {" "}
             Github
           </a>
         </footer>
-      </header>
+      </div>
     </div>
   );
 }
