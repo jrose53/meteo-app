@@ -3,60 +3,54 @@ import axios from "axios";
 import "./Search.css";
 
 export default function Search() {
-  let [city, setCity] = useState("");
-  let [weather, setWeather] = useState(null);
-  const [loaded, setLoaded] = useState(false);
-
-  function displayTemperature(response) {
-    setLoaded(true);
-    setWeather({
-      temperature: response.data.main.temp,
-      wind: response.data.wind.speed,
-      humidity: response.data.main.humidity,
-      icon: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
-      description: response.data.weather[0].description,
-    });
-  }
-
-  function changeCity(event) {
-    event.preventDefault();
-    setCity(event.target.value);
-  }
-
-  function handleSubmit(event) {
-    event.preventDefault();
-    let apiKey = "5e21b17554d4c43f6fad6516122f37cc";
-    let unit = "metric";
-    let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${unit}`;
-    axios.get(url).then(displayTemperature);
-  }
-
-  let form = (
-    <div className="search">
-      <form onSubmit={handleSubmit}>
-        <input
-          onChange={changeCity}
-          type="text"
-          placeholder="search city here"
-        />
-        <input type="submit" value="Search" />
+  return (
+    <div className="Search">
+      <form>
+        <div className="row">
+          <div className="col-9">
+            <input
+              type="search"
+              placeholder="Enter a city..."
+              className="form-control"
+              autoFocus="on"
+            />
+          </div>
+          <div className="col-3">
+            <input
+              type="submit"
+              value="Search"
+              className="btn btn-primary w-100"
+            />{" "}
+          </div>
+        </div>
       </form>
+      <h1> Paris</h1>
+      <ul>
+        <li>Wednesday 11:00</li>
+        <li>Mostly Cloudy</li>
+      </ul>
+      <div className="row mt-3">
+        <div className="col-6">
+          <div className="clearfix d-flex">
+            <img
+              src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
+              alt=""
+              className="float-left"
+            />{" "}
+            <div className="float-left">
+              <span className="temperature">6</span>
+              <span className="unit">°C</span>
+            </div>
+          </div>
+        </div>
+        <div className="col-6">
+          <ul>
+            <li> Precipitation: 15%</li>
+            <li> Humidity: 72%</li>
+            <li> Wind:13km per h</li>
+          </ul>
+        </div>
+      </div>{" "}
     </div>
   );
-  if (loaded) {
-    return (
-      <div className="weather">
-        <div> {form}</div>
-        <ul className="description">
-          <li>Temperature: {Math.round(weather.temperature)}°C</li>
-          <li>Description: {weather.description}</li>
-          <li>Humidity: {weather.humidity}%</li>
-          <li>Wind: {weather.wind}km/h</li>
-          <img src={weather.icon} alt={weather.description} />
-        </ul>
-      </div>
-    );
-  } else {
-    return form;
-  }
 }
