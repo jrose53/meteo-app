@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import FormatedDate from "./FormatedDate.js";
 import "./Search.css";
 
 export default function Search(props) {
@@ -14,6 +15,7 @@ export default function Search(props) {
       iconUrl: "https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png",
       wind: response.data.wind.speed,
       city: response.data.name,
+      date: new Date(response.data.dt * 1000),
     });
   }
 
@@ -41,7 +43,9 @@ export default function Search(props) {
         </form>
         <h1>{weatherData.city}</h1>
         <ul>
-          <li>Wednesday 11:00</li>
+          <li>
+            <FormatedDate date={weatherData.date} />
+          </li>
           <li className="text-capitalize"> {weatherData.description}</li>
         </ul>
         <div className="row mt-3">
