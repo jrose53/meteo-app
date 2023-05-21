@@ -25,7 +25,7 @@ export default function App() {
             rel="noopener noreferrer"
           >
             {" "}
-            Github
+            Github test
           </a>
         </footer>
       </div>
