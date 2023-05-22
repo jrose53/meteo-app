@@ -1,5 +1,5 @@
 import ReactAnimatedWeather from "react-animated-weather";
-import React, { useState } from "react";
+import React from "react";
 
 export default function WeatherIcon(props) {
   const codeMapping = {
