@@ -26,7 +26,17 @@ export default function App() {
           >
             {" "}
             Github
+          </a>{" "}
+          and hosted on{" "}
+          <a
+            href="https://github.com/jrose53/meteo-app"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {" "}
+            Netlify{" "}
           </a>
+          .
         </footer>
       </div>
     </div>

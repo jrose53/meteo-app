@@ -1,19 +1,20 @@
 .Search {
   font-family: Arial, Helvetica, sans-serif;
   border: 1px solid;
-
   padding: 16px;
-
+  border-color: #b1cc74;
   border-radius: 4px;
   max-width: 600px;
 }
 
 .Search h1 {
-  font-size: 24px;
-  font-weight: 100;
+  font-size: 28px;
+  font-weight: 200;
   line-height: 29px;
   margin: 0px;
-  padding-bottom: 10px;
+  padding-bottom: 8px;
+  color: #4e8098;
+  text-decoration: solid;
 }
 
 .Search ul {
@@ -30,10 +31,6 @@
 
 .Search form {
   margin-bottom: 20px;
-}
-
-.Search canvas {
-  height: 64px;
 }
 
 .Search .temperature {
@@ -53,4 +50,11 @@
   font-size: 16px;
   line-height: 1;
   margin-left: 5px;
+  color: #4e8098;
+}
+
+.Search .btn {
+  color: white;
+  background-color: #b1cc74;
+  border-color: #b1cc74;
 }
